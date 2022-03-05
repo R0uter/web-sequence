@@ -8,6 +8,8 @@
 		"start": "if-env NODE_ENV=production && yarn serve || yarn dev",
 		"build": "preact build --template src/index.html --no-inline-css --no-prerender --no-sw",
 		"release": "gulp release",
+		"prep:release:upgrade-core": "yarn upgrade vue-sequence@latest",
+		"prep:release:git-tag-push": "git tag release-`date +%Y%m%d%H%M` && git push origin release-`date +%Y%m%d%H%M`",
 		"dev": "preact watch --template src/index.html --no-prerender",
 		"lint": "eslint src",
 		"test": "jest ./",
@@ -74,7 +76,7 @@
 		"split.js": "1.6.0",
 		"svg-transform-loader": "^2.0.12",
 		"vue": "^2.6.11",
-		"vue-sequence": "^1.0.184",
+		"vue-sequence": "^1.0.219",
 		"vuex": "3.4.0"
 	},
 	"resolutions": {
