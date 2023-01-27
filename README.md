@@ -80,6 +80,7 @@ env:
 #### First time setup
 
 ````
+$ pre-commit install // install pre-commit hook (`brew install pre-commit` if not installed for mac)
 $ yarn install  // instal modules
 $ yarn start    // start a local server
 
