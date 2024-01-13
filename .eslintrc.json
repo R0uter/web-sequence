@@ -2,8 +2,12 @@
 	"env": {
 		"browser": true
 	},
-	"parser": "babel-eslint",
-	"extends": ["eslint:recommended", "eslint-config-synacor"],
+	"parser": "@babel/eslint-parser",
+	"parserOptions": {
+		"ecmaVersion": 8,
+		"requireConfigFile": false
+	},
+	"extends": ["eslint:recommended"],
 	"rules": {
 		"accessor-pairs": "error",
 
