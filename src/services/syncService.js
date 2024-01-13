@@ -1,10 +1,15 @@
 import firebase from 'firebase/app';
 
 async function syncDiagram(currentItem) {
-  if (location.host === 'localhost:8080') {
-    console.log('Skipping sync-diagram call in local environment');
-    return;
-  }
+	if(location.host === 'localhost:8080') {
+		console.log('Skipping sync-diagram call in local environment');
+		return;
+	}
+	if(window.zenumlDesktop) {
+		console.log('Skipping sync-diagram call in electron app');
+		return;
+	}
+
 
   const { id, title, js } = currentItem;
   if (!js || !title) {
