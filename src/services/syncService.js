@@ -5,6 +5,11 @@ async function syncDiagram(currentItem) {
 		console.log('Skipping sync-diagram call in local environment');
 		return;
 	}
+	if(window.zenumlDesktop) {
+		console.log('Skipping sync-diagram call in electron app');
+		return;
+	}
+
 
 	const { id, title, js} = currentItem;
 	if (!js || !title) {
